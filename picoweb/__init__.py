@@ -1,6 +1,8 @@
+
 # Picoweb web pico-framework for Pycopy, https://github.com/pfalcon/pycopy
 # Copyright (c) 2014-2020 Paul Sokolovsky
 # SPDX-License-Identifier: MIT
+
 import sys
 import gc
 import micropython
@@ -14,7 +16,6 @@ import pkg_resources
 from .utils import parse_qs
 
 SEND_BUFSZ = 128
-
 
 def get_mime_type(fname):
     # Provide minimal detection of important file
@@ -34,7 +35,6 @@ def sendstream(writer, f):
         if not l:
             break
         yield from writer.awrite(buf, 0, l)
-
 
 def jsonify(writer, dict):
     import ujson
@@ -63,7 +63,6 @@ def http_error(writer, status):
     yield from start_response(writer, status=status)
     yield from writer.awrite(status)
 
-
 class HTTPRequest:
 
     def __init__(self):
@@ -78,7 +77,6 @@ class HTTPRequest:
     def parse_qs(self):
         form = parse_qs(self.qs)
         self.form = form
-
 
 class WebApp:
 
@@ -305,7 +303,7 @@ class WebApp:
 
     def run(self, host="127.0.0.1", port=8081, debug=False, lazy_init=False, log=None):
         if log is None and debug >= 0:
-            import ulogging
+            import logging as ulogging
             log = ulogging.getLogger("picoweb")
             if debug > 0:
                 log.setLevel(ulogging.DEBUG)
