@@ -1,9 +1,8 @@
 {
   "name": "picoweb",
   "version": "1.0.0",
-  "description": "PicoWeb",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tacker66/picoweb"
-  }
+  "urls": [
+    ["picoweb/__init__.py", "github:tacker66/picoweb/picoweb/__init__.py"],
+    ["picoweb/utils.py", "github:tacker66/picoweb/picoweb/utils.py"]
+  ]
 }
