@@ -5,6 +5,12 @@ picoweb is a "micro" web micro-framework (thus, "pico-framework") for
 radically unbloated web applications using radically unbloated Python
 implementation, Pycopy, https://github.com/pfalcon/pycopy .
 
+This repository is a fork of the original https://github.com/pfalcon/picoweb
+providing a shrunk-down version which runs on current versions of `MicroPython <https://github.com/micropython/micropython>`_
+and is installable on any network-enabled device with ``mip``::
+
+    mip.install("github:tacker66/picoweb")
+
 Features:
 
 * Asynchronous from the start, using unbloated asyncio-like library
